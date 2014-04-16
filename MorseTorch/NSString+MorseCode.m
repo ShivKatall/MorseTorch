@@ -15,8 +15,6 @@
 {
     NSString *inputString = [self uppercaseString];
     
-    NSMutableArray *morseArray = [NSMutableArray new];
-    
     NSDictionary *morseDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
             @".-", @"A",
             @"-...", @"B",
@@ -44,9 +42,21 @@
             @"-..-", @"X",
             @"-.--", @"Y",
             @"--..", @"Z",
+            @".----", @"1",
+            @"..---", @"2",
+            @"...--", @"3",
+            @"....-", @"4",
+            @".....", @"5",
+            @"-....", @"6",
+            @"--...", @"7",
+            @"---..", @"8",
+            @"----.", @"9",
+            @"-----", @"0",
             @"BREAK", @" ",
             @"STOP", @".",
             nil];
+    
+    NSMutableArray *morseArray = [NSMutableArray new];
 
     for (NSInteger i=0; i<inputString.length; i++) {
         NSString *letterString = [inputString substringWithRange:NSMakeRange(i, 1)];
@@ -89,11 +99,11 @@
                 [flashArray addObject:@"ON"];
                 [flashArray addObject:[self durationForPip:pip]];
                 [flashArray addObject:@"OFF"];
-                [flashArray addObject:@"100000"];
+                [flashArray addObject:@"100000"]; //after a pip
             }
-            [flashArray addObject:@"200000"];
+            [flashArray addObject:@"200000"]; // after a letter
         }
-        [flashArray addObject:@"400000"];
+        [flashArray addObject:@"400000"]; // after a word
     }
     
     NSOperationQueue *flashQueue = [NSOperationQueue new];
@@ -106,7 +116,7 @@
         if ([flashOpString isEqualToString:@"ON"]) {
             flashOperation = [NSBlockOperation blockOperationWithBlock:^{
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    if ([device hasTorch] && [device hasFlash]) {
+                    if ([device hasTorch] || [device hasFlash]) {
                         [device lockForConfiguration:nil];
                         [device setTorchMode:AVCaptureTorchModeOn];
                         [device setFlashMode:AVCaptureFlashModeOn];
@@ -117,7 +127,7 @@
         } else if ([flashOpString isEqualToString:@"OFF"]) {
             flashOperation = [NSBlockOperation blockOperationWithBlock:^{
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    if ([device hasTorch] && [device hasFlash]) {
+                    if ([device hasTorch] || [device hasFlash]) {
                         [device lockForConfiguration:nil];
                         [device setTorchMode:AVCaptureTorchModeOff];
                         [device setFlashMode:AVCaptureFlashModeOff];

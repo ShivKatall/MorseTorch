@@ -20,6 +20,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSString *myString = @"SOS";
+    
+    NSMutableArray *myArray = [myString flashArrayFromString];
+    
+    NSLog(@"%@", myArray);
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,7 +34,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)transmit:(id)sender {
-        
+    
 }
 
 @end
