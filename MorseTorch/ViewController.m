@@ -11,8 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "TorchController.h"
 
-@interface ViewController () <UITextFieldDelegate>
-
+@interface ViewController () <UITextFieldDelegate, TorchControllerDelegate>
 
 @property (strong, nonatomic) TorchController *myTorchController;
 @property (weak, nonatomic) IBOutlet UITextField *userTextField;
@@ -25,6 +24,7 @@
 {
     [super viewDidLoad];
         self.myTorchController = [TorchController new];
+        self.myTorchController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,6 +39,17 @@
     return YES;
 }
 
+-(void)displayNewLetter:(NSString *)newLetter
+{
+    [ProgressHUD show:newLetter];
+    
+    //NSLog(@"%@", newLetter);
+}
+
+-(void)endOfDisplay
+{
+    [ProgressHUD dismiss];
+}
 
 - (IBAction)transmit:(id)sender
 {

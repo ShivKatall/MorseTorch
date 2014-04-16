@@ -35,6 +35,14 @@
 
     for (NSString *morseLetter in MorseLetterArray)
     {
+        [self.flashQueue addOperationWithBlock:^{
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.delegate displayNewLetter:[morseLetter englishLetterFromMorseLetter]];
+            }];
+            
+        }];
+        
+        
         for (int i = 0;i <morseLetter.length; i++)
         {
             NSString *morseSymbol = [morseLetter substringWithRange:NSMakeRange(i, 1)];
@@ -85,6 +93,12 @@
             usleep(200000);
         }];
     }
+    [self.flashQueue addOperationWithBlock:^{
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.delegate endOfDisplay];
+        }];
+        
+    }];
 
 }
 

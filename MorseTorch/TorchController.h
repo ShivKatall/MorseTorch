@@ -11,6 +11,7 @@
 @protocol TorchControllerDelegate <NSObject>
 
 -(void)displayNewLetter:(NSString *)newLetter;
+-(void)endOfDisplay;
 
 @end
 

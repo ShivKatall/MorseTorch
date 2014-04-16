@@ -12,5 +12,6 @@
 
 - (NSMutableArray *)morseArrayFromString;
 - (NSMutableArray *)flashArrayFromString;
-- (NSMutableArray *)flashArrayFromMorseArray:(NSArray *)morseArray;
+-(NSString *)englishLetterFromMorseLetter;
+
 @end
