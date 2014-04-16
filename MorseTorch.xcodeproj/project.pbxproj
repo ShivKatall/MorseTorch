@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D3E6FE618FDC57B002E7A6A /* NSString+MorseCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E6FE518FDC57B002E7A6A /* NSString+MorseCode.m */; };
+		3D3E6FE818FDC62F002E7A6A /* MorseTranslatorPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E6FE718FDC62F002E7A6A /* MorseTranslatorPList.plist */; };
+		3D3E6FEA18FDD039002E7A6A /* MorseDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E6FE918FDD039002E7A6A /* MorseDictionary.plist */; };
 		3DC3592118FC7601005F59E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC3592018FC7601005F59E6 /* Foundation.framework */; };
 		3DC3592318FC7601005F59E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC3592218FC7601005F59E6 /* CoreGraphics.framework */; };
 		3DC3592518FC7601005F59E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC3592418FC7601005F59E6 /* UIKit.framework */; };
@@ -34,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D3E6FE418FDC57B002E7A6A /* NSString+MorseCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MorseCode.h"; sourceTree = "<group>"; };
+		3D3E6FE518FDC57B002E7A6A /* NSString+MorseCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MorseCode.m"; sourceTree = "<group>"; };
+		3D3E6FE718FDC62F002E7A6A /* MorseTranslatorPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MorseTranslatorPList.plist; sourceTree = "<group>"; };
+		3D3E6FE918FDD039002E7A6A /* MorseDictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MorseDictionary.plist; sourceTree = "<group>"; };
 		3DC3591D18FC7601005F59E6 /* MorseTorch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseTorch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC3592018FC7601005F59E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DC3592218FC7601005F59E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +124,8 @@
 				3DC3593218FC7601005F59E6 /* Main.storyboard */,
 				3DC3593518FC7601005F59E6 /* ViewController.h */,
 				3DC3593618FC7601005F59E6 /* ViewController.m */,
+				3D3E6FE418FDC57B002E7A6A /* NSString+MorseCode.h */,
+				3D3E6FE518FDC57B002E7A6A /* NSString+MorseCode.m */,
 				3DC3593818FC7602005F59E6 /* Images.xcassets */,
 				3DC3592718FC7601005F59E6 /* Supporting Files */,
 			);
@@ -127,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				3DC3592818FC7601005F59E6 /* MorseTorch-Info.plist */,
+				3D3E6FE718FDC62F002E7A6A /* MorseTranslatorPList.plist */,
+				3D3E6FE918FDD039002E7A6A /* MorseDictionary.plist */,
 				3DC3592918FC7601005F59E6 /* InfoPlist.strings */,
 				3DC3592C18FC7601005F59E6 /* main.m */,
 				3DC3592E18FC7601005F59E6 /* MorseTorch-Prefix.pch */,
@@ -228,8 +239,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3E6FE818FDC62F002E7A6A /* MorseTranslatorPList.plist in Resources */,
 				3DC3593918FC7602005F59E6 /* Images.xcassets in Resources */,
 				3DC3592B18FC7601005F59E6 /* InfoPlist.strings in Resources */,
+				3D3E6FEA18FDD039002E7A6A /* MorseDictionary.plist in Resources */,
 				3DC3593418FC7601005F59E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +265,7 @@
 				3DC3593718FC7601005F59E6 /* ViewController.m in Sources */,
 				3DC3593118FC7601005F59E6 /* AppDelegate.m in Sources */,
 				3DC3592D18FC7601005F59E6 /* main.m in Sources */,
+				3D3E6FE618FDC57B002E7A6A /* NSString+MorseCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +470,7 @@
 				3DC3595118FC7602005F59E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3DC3595218FC7602005F59E6 /* Build configuration list for PBXNativeTarget "MorseTorchTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +479,7 @@
 				3DC3595418FC7602005F59E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
