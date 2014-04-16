@@ -8,10 +8,14 @@
 
 #import "ViewController.h"
 #import "NSString+MorseCode.h"
+#import <AVFoundation/AVFoundation.h>
+#import "TorchController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *userString;
+
+@property (strong, nonatomic) TorchController *myTorchController;
+@property (weak, nonatomic) IBOutlet UITextField *userTextField;
 
 @end
 
@@ -20,12 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSString *myString = @"SOS";
-    
-    NSMutableArray *myArray = [myString flashArrayFromString];
-    
-    NSLog(@"%@", myArray);
+        self.myTorchController = [TorchController new];
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,8 +32,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)transmit:(id)sender {
-    
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
+- (IBAction)transmit:(id)sender
+{
+    [self.myTorchController convertMorseFromString:self.userTextField.text];
 }
 
 @end

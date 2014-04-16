@@ -57,27 +57,18 @@
             nil];
     
     NSMutableArray *morseArray = [NSMutableArray new];
+    //NSMutableArray *word = [NSMutableArray new];
 
     for (NSInteger i=0; i<inputString.length; i++) {
         NSString *letterString = [inputString substringWithRange:NSMakeRange(i, 1)];
-        NSString *morseValue = [morseDictionary objectForKey:letterString];
-        if (morseValue) {
-            NSMutableArray *word = [NSMutableArray new];
-            if ([morseValue isEqualToString:@"BREAK"]) {
-                break;
-            } else {
-                NSMutableArray *letter = [NSMutableArray new];
-                for (NSInteger j=0; j<morseValue.length; j++) {
-                    NSString *pip = [morseValue substringWithRange:NSMakeRange(j, 1)];
-                    [letter addObject:pip];
-                }
-                [word addObject:letter];
-            }
-            [morseArray addObject:word];
-        };
+        NSString *morseLetter = [morseDictionary objectForKey:letterString];
+        if (morseLetter) {
+            
+            [morseArray addObject:morseLetter];
+        }
+        
     }
     return morseArray;
-    NSLog(@"Returned Morse Array");
 }
 
 -(NSString *)durationForPip:(NSString *)pip
@@ -93,6 +84,7 @@
 {
     NSMutableArray *flashArray = [NSMutableArray new];
     
+    NSLog(@"Morse Array: %@", morseArray);
     for (NSMutableArray *word in morseArray){
         for (NSMutableArray *letter in word){
             for (NSString *pip in letter){
@@ -151,7 +143,7 @@
 - (NSMutableArray *)flashArrayFromString
 {
     NSMutableArray *morsePhrase = [self morseArrayFromString];
-    return [self flashArrayFromMorseArray:morsePhrase];
+    return morsePhrase;
     NSLog(@"flashArrayFromString finished");
 
 }

@@ -24,6 +24,7 @@
 		3DC3594218FC7602005F59E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC3592418FC7601005F59E6 /* UIKit.framework */; };
 		3DC3594A18FC7602005F59E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DC3594818FC7602005F59E6 /* InfoPlist.strings */; };
 		3DC3594C18FC7602005F59E6 /* MorseTorchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC3594B18FC7602005F59E6 /* MorseTorchTests.m */; };
+		3DE13E2C18FF35DC00609EE8 /* TorchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE13E2B18FF35DC00609EE8 /* TorchController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		3DC3594718FC7602005F59E6 /* MorseTorchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MorseTorchTests-Info.plist"; sourceTree = "<group>"; };
 		3DC3594918FC7602005F59E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DC3594B18FC7602005F59E6 /* MorseTorchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MorseTorchTests.m; sourceTree = "<group>"; };
+		3DE13E2A18FF35DC00609EE8 /* TorchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TorchController.h; sourceTree = "<group>"; };
+		3DE13E2B18FF35DC00609EE8 /* TorchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TorchController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				3DC3593218FC7601005F59E6 /* Main.storyboard */,
 				3DC3593518FC7601005F59E6 /* ViewController.h */,
 				3DC3593618FC7601005F59E6 /* ViewController.m */,
+				3DE13E2A18FF35DC00609EE8 /* TorchController.h */,
+				3DE13E2B18FF35DC00609EE8 /* TorchController.m */,
 				3D3E6FE418FDC57B002E7A6A /* NSString+MorseCode.h */,
 				3D3E6FE518FDC57B002E7A6A /* NSString+MorseCode.m */,
 				3DC3593818FC7602005F59E6 /* Images.xcassets */,
@@ -265,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE13E2C18FF35DC00609EE8 /* TorchController.m in Sources */,
 				3DC3593718FC7601005F59E6 /* ViewController.m in Sources */,
 				3DC3593118FC7601005F59E6 /* AppDelegate.m in Sources */,
 				3DC3592D18FC7601005F59E6 /* main.m in Sources */,
