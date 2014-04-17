@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol TorchControllerDelegate <NSObject>                               // Protocol makes it possible for other views to use these methods. (Question: can you send these protocol methods to multiple other classes?)
+@protocol TorchControllerDelegate <NSObject>
 
 -(void)displayNewLetter:(NSString *)newLetter;
 -(void)endOfDisplay;
@@ -17,8 +17,8 @@
 
 @interface TorchController : NSObject
 
-@property (nonatomic, weak) id <TorchControllerDelegate> delegate;          // creates torch controller delegate other classes can grab?
+@property (nonatomic, weak) id <TorchControllerDelegate> delegate;
 
--(void) convertToTorchSignalFromString:(NSString *)userString;
+-(void) convertMorseFromString:(NSString *)userString;
 
 @end

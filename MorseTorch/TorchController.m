@@ -20,23 +20,23 @@
 @implementation TorchController
 
 -(id)init {
-    self = [super init];                                                    // Calls from superclass (DON'T FULLY UNDERSTAND THIS)
+    self = [super init];
     if (self) {
         self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
         self.flashQueue = [NSOperationQueue new];
-        self.flashQueue.maxConcurrentOperationCount = 1;                                // calls method that changes max operation count to 1. (only one thing at a time) (WHAT DOES THE FULL SYNTAX LOOK LIKE?)
+        self.flashQueue.maxConcurrentOperationCount = 1;
     }
     return self;
 }
 
--(void)convertToTorchSignalFromString:(NSString *)userString
+-(void) convertMorseFromString:(NSString *)userString
 {
     NSMutableArray *MorseLetterArray = [userString morseArrayFromString];
     for (NSString *morseLetter in MorseLetterArray)
     {
-        [self.flashQueue addOperationWithBlock:^{                                   // need to know more about blocks.
+        [self.flashQueue addOperationWithBlock:^{
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [self.delegate displayNewLetter:[morseLetter englishLetterFromMorseLetter]];  //So the delegate property referred to here is actually in ViewController.m?
+                [self.delegate displayNewLetter:[morseLetter englishLetterFromMorseLetter]];
             }];
             
         }];

@@ -27,7 +27,7 @@
         self.myTorchController.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning                                     // LOOK UP MORE
+- (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -35,7 +35,7 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];                               // this makes the Keyboard go away NOT SURE WHY
+    [textField resignFirstResponder];
     return YES;
 }
 
@@ -51,7 +51,7 @@
 
 - (IBAction)transmit:(id)sender
 {
-    [self.myTorchController convertToTorchSignalFromString:self.userTextField.text];
+    [self.myTorchController convertMorseFromString:self.userTextField.text];
 }
 
 @end
