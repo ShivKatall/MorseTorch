@@ -12,7 +12,7 @@
 
 @interface TorchController ()
 
-@property (nonatomic, strong) AVCaptureDevice *device;
+@property (nonatomic, strong) AVCaptureDevice *torchDevice;
 @property (strong, nonatomic) NSOperationQueue *flashQueue;
 
 @end
@@ -22,7 +22,7 @@
 -(id)init {
     self = [super init];                                                    // Calls from superclass (DON'T FULLY UNDERSTAND THIS)
     if (self) {
-        self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+        self.torchDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
         self.flashQueue = [NSOperationQueue new];
         self.flashQueue.maxConcurrentOperationCount = 1;                                // calls method that changes max operation count to 1. (only one thing at a time) (WHAT DOES THE FULL SYNTAX LOOK LIKE?)
     }
@@ -44,44 +44,44 @@
         
         for (int i = 0;i <morseLetter.length; i++)
         {
-            NSString *morseSymbol = [morseLetter substringWithRange:NSMakeRange(i, 1)];
+            NSString *pip = [morseLetter substringWithRange:NSMakeRange(i, 1)];
             
-            if ([morseSymbol isEqualToString:@"."])
+            if ([pip isEqualToString:@"."])
             {
                 [self.flashQueue addOperationWithBlock:^{
-                    if ([_device hasTorch] || [_device hasFlash]) {
-                        [_device lockForConfiguration:nil];
-                        [_device setTorchMode:AVCaptureTorchModeOn];
-                        [_device setFlashMode:AVCaptureFlashModeOn];
-                        [_device unlockForConfiguration];
+                    if ([_torchDevice hasTorch] || [_torchDevice hasFlash]) {
+                        [_torchDevice lockForConfiguration:nil];
+                        [_torchDevice setTorchMode:AVCaptureTorchModeOn];
+                        [_torchDevice setFlashMode:AVCaptureFlashModeOn];
+                        [_torchDevice unlockForConfiguration];
                         usleep(100000);
-                        [_device lockForConfiguration:nil];
-                        [_device setTorchMode:AVCaptureTorchModeOff];
-                        [_device setFlashMode:AVCaptureFlashModeOff];
-                        [_device unlockForConfiguration];
+                        [_torchDevice lockForConfiguration:nil];
+                        [_torchDevice setTorchMode:AVCaptureTorchModeOff];
+                        [_torchDevice setFlashMode:AVCaptureFlashModeOff];
+                        [_torchDevice unlockForConfiguration];
                         usleep(100000);
                     }
                 }];
             }
-            else if ([morseSymbol isEqualToString:@"-"])
+            else if ([pip isEqualToString:@"-"])
             {
                 [self.flashQueue addOperationWithBlock:^{
-                    if ([_device hasTorch] || [_device hasFlash]) {
-                        [_device lockForConfiguration:nil];
-                        [_device setTorchMode:AVCaptureTorchModeOn];
-                        [_device setFlashMode:AVCaptureFlashModeOn];
-                        [_device unlockForConfiguration];
+                    if ([_torchDevice hasTorch] || [_torchDevice hasFlash]) {
+                        [_torchDevice lockForConfiguration:nil];
+                        [_torchDevice setTorchMode:AVCaptureTorchModeOn];
+                        [_torchDevice setFlashMode:AVCaptureFlashModeOn];
+                        [_torchDevice unlockForConfiguration];
                         usleep(300000);
-                        [_device lockForConfiguration:nil];
-                        [_device setTorchMode:AVCaptureTorchModeOff];
-                        [_device setFlashMode:AVCaptureFlashModeOff];
-                        [_device unlockForConfiguration];
+                        [_torchDevice lockForConfiguration:nil];
+                        [_torchDevice setTorchMode:AVCaptureTorchModeOff];
+                        [_torchDevice setFlashMode:AVCaptureFlashModeOff];
+                        [_torchDevice unlockForConfiguration];
                         usleep(100000);
                     }
                 }];
                 
             }
-            else if ([morseSymbol isEqualToString:@"BREAK"])
+            else if ([pip isEqualToString:@"BREAK"])
             {
                 [self.flashQueue addOperationWithBlock:^{
                     usleep(400000);
@@ -101,5 +101,9 @@
 
 }
 
+-(void)cancelTransmittion
+{
+    [self.flashQueue cancelAllOperations];
+}
 
 @end

@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol TorchControllerDelegate <NSObject>                               // Protocol makes it possible for other views to use these methods. (Question: can you send these protocol methods to multiple other classes?)
-
+@protocol TorchControllerDelegate <NSObject>                               // Protocol makes it possible for other views to use these methods. (Question: can you send these protocol methods to multiple other classes? Answer: Yes, but the TorchController will only actively send to the delegate.
 -(void)displayNewLetter:(NSString *)newLetter;
 -(void)endOfDisplay;
 
@@ -17,13 +16,13 @@
 
 @interface TorchController : NSObject
 
-@property (nonatomic, weak) id <TorchControllerDelegate> delegate;          // creates torch controller delegate other classes can grab?
+@property (nonatomic, weak) id <TorchControllerDelegate> delegate;          // creates torch controller delegate that only ONE other class can grab.
 
--(void) convertToTorchSignalFromString:(NSString *)userString;
+-(void)convertToTorchSignalFromString:(NSString *)userString;
+-(void)cancelTransmittion;
 
 @end
 
 
 // Extra Questions:
 // 1) How the hell did we do all that cocoaPod stuff? More Info Please?
-// 2) How do I do a Cancel button?
