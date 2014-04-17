@@ -22,3 +22,8 @@
 -(void) convertToTorchSignalFromString:(NSString *)userString;
 
 @end
+
+
+// Extra Questions:
+// 1) How the hell did we do all that cocoaPod stuff? More Info Please?
+// 2) How do I do a Cancel button?
