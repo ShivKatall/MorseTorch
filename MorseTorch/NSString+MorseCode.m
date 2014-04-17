@@ -57,27 +57,15 @@
             nil];
     
     NSMutableArray *morseArray = [NSMutableArray new];
-    //NSMutableArray *word = [NSMutableArray new];
 
     for (NSInteger i=0; i<inputString.length; i++) {
         NSString *letterString = [inputString substringWithRange:NSMakeRange(i, 1)];
         NSString *morseLetter = [morseDictionary objectForKey:letterString];
         if (morseLetter) {
-            
             [morseArray addObject:morseLetter];
         }
-        
     }
     return morseArray;
-}
-
-
-- (NSMutableArray *)flashArrayFromString
-{
-    NSMutableArray *morsePhrase = [self morseArrayFromString];
-    return morsePhrase;
-    NSLog(@"flashArrayFromString finished");
-
 }
 
 -(NSString *)englishLetterFromMorseLetter

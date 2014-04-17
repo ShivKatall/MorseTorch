@@ -27,7 +27,7 @@
         self.myTorchController.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning
+- (void)didReceiveMemoryWarning                                     // LOOK UP MORE
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -35,15 +35,13 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
+    [textField resignFirstResponder];                               // this makes the Keyboard go away NOT SURE WHY
     return YES;
 }
 
 -(void)displayNewLetter:(NSString *)newLetter
 {
     [ProgressHUD show:newLetter];
-    
-    //NSLog(@"%@", newLetter);
 }
 
 -(void)endOfDisplay
@@ -53,7 +51,7 @@
 
 - (IBAction)transmit:(id)sender
 {
-    [self.myTorchController convertMorseFromString:self.userTextField.text];
+    [self.myTorchController convertToTorchSignalFromString:self.userTextField.text];
 }
 
 @end

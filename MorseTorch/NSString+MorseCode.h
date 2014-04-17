@@ -10,8 +10,7 @@
 
 @interface NSString (MorseCode)
 
-- (NSMutableArray *)morseArrayFromString;
-- (NSMutableArray *)flashArrayFromString;
+-(NSMutableArray *)morseArrayFromString;
 -(NSString *)englishLetterFromMorseLetter;
 
 @end
