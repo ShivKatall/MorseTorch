@@ -19,7 +19,7 @@
 @property (nonatomic, weak) id <TorchControllerDelegate> delegate;          // creates torch controller delegate that only ONE other class can grab.
 
 -(void)convertToTorchSignalFromString:(NSString *)userString;
--(void)cancelTransmittion;
+-(void)cancelTransmission;
 
 @end
 

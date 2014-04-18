@@ -11,6 +11,8 @@
 		3D3E6FE618FDC57B002E7A6A /* NSString+MorseCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E6FE518FDC57B002E7A6A /* NSString+MorseCode.m */; };
 		3D3E6FE818FDC62F002E7A6A /* MorseTranslatorPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E6FE718FDC62F002E7A6A /* MorseTranslatorPList.plist */; };
 		3D3E6FEA18FDD039002E7A6A /* MorseDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E6FE918FDD039002E7A6A /* MorseDictionary.plist */; };
+		3D5AB7541901BC70003FEBA4 /* ReceiveDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5AB7531901BC70003FEBA4 /* ReceiveDataController.m */; };
+		3D5AB7561901C36A003FEBA4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5AB7551901C36A003FEBA4 /* ImageIO.framework */; };
 		3DC3592118FC7601005F59E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC3592018FC7601005F59E6 /* Foundation.framework */; };
 		3DC3592318FC7601005F59E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC3592218FC7601005F59E6 /* CoreGraphics.framework */; };
 		3DC3592518FC7601005F59E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC3592418FC7601005F59E6 /* UIKit.framework */; };
@@ -47,6 +49,9 @@
 		3D3E6FE518FDC57B002E7A6A /* NSString+MorseCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MorseCode.m"; sourceTree = "<group>"; };
 		3D3E6FE718FDC62F002E7A6A /* MorseTranslatorPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MorseTranslatorPList.plist; sourceTree = "<group>"; };
 		3D3E6FE918FDD039002E7A6A /* MorseDictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MorseDictionary.plist; sourceTree = "<group>"; };
+		3D5AB7521901BC70003FEBA4 /* ReceiveDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveDataController.h; sourceTree = "<group>"; };
+		3D5AB7531901BC70003FEBA4 /* ReceiveDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveDataController.m; sourceTree = "<group>"; };
+		3D5AB7551901C36A003FEBA4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3DC3591D18FC7601005F59E6 /* MorseTorch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseTorch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC3592018FC7601005F59E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DC3592218FC7601005F59E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5AB7561901C36A003FEBA4 /* ImageIO.framework in Frameworks */,
 				3DC3592318FC7601005F59E6 /* CoreGraphics.framework in Frameworks */,
 				3DC3592518FC7601005F59E6 /* UIKit.framework in Frameworks */,
 				3DC3592118FC7601005F59E6 /* Foundation.framework in Frameworks */,
@@ -119,6 +125,7 @@
 		3DC3591F18FC7601005F59E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D5AB7551901C36A003FEBA4 /* ImageIO.framework */,
 				3DC3592018FC7601005F59E6 /* Foundation.framework */,
 				3DC3592218FC7601005F59E6 /* CoreGraphics.framework */,
 				3DC3592418FC7601005F59E6 /* UIKit.framework */,
@@ -136,10 +143,12 @@
 				3DC3593218FC7601005F59E6 /* Main.storyboard */,
 				3DC3593518FC7601005F59E6 /* TransmitViewController.h */,
 				3DC3593618FC7601005F59E6 /* TransmitViewController.m */,
-				3D2D79F91900724800CC4534 /* ReceiveViewController.h */,
-				3D2D79FA1900724800CC4534 /* ReceiveViewController.m */,
 				3DE13E2A18FF35DC00609EE8 /* TorchController.h */,
 				3DE13E2B18FF35DC00609EE8 /* TorchController.m */,
+				3D2D79F91900724800CC4534 /* ReceiveViewController.h */,
+				3D2D79FA1900724800CC4534 /* ReceiveViewController.m */,
+				3D5AB7521901BC70003FEBA4 /* ReceiveDataController.h */,
+				3D5AB7531901BC70003FEBA4 /* ReceiveDataController.m */,
 				3D3E6FE418FDC57B002E7A6A /* NSString+MorseCode.h */,
 				3D3E6FE518FDC57B002E7A6A /* NSString+MorseCode.m */,
 				3DC3593818FC7602005F59E6 /* Images.xcassets */,
@@ -316,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5AB7541901BC70003FEBA4 /* ReceiveDataController.m in Sources */,
 				3DE13E2C18FF35DC00609EE8 /* TorchController.m in Sources */,
 				3DC3593718FC7601005F59E6 /* TransmitViewController.m in Sources */,
 				3DC3593118FC7601005F59E6 /* AppDelegate.m in Sources */,

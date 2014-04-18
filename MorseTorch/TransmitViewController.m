@@ -74,7 +74,7 @@
 
 -(void)cancel:(id)sender
 {
-    [self.myTorchController cancelTransmittion];
+    [self.myTorchController cancelTransmission];
     [ProgressHUD dismiss];
     [self.transmitCancelButton removeTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
     [self.transmitCancelButton addTarget:self action:@selector(transmit:) forControlEvents:UIControlEventTouchUpInside];

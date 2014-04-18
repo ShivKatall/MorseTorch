@@ -101,7 +101,7 @@
 
 }
 
--(void)cancelTransmittion
+-(void)cancelTransmission
 {
     [self.flashQueue cancelAllOperations];
 }
