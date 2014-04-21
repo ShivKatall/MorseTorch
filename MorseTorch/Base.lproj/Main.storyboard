@@ -188,6 +188,7 @@
                     <connections>
                         <outlet property="cameraView" destination="mJ6-HL-5ar" id="awC-l2-Pgb"/>
                         <outlet property="receiveStopButton" destination="qjP-Ow-zM3" id="YOO-cb-mVW"/>
+                        <outlet property="recieveMessage" destination="b04-Pb-nOy" id="qXx-oy-hmg"/>
                         <outlet property="segueToTransmitModeButton" destination="otg-2U-NmW" id="2VF-SK-frt"/>
                     </connections>
                 </viewController>

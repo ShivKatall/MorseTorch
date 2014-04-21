@@ -20,6 +20,7 @@
 @property (strong, nonatomic)AVCaptureVideoPreviewLayer *cameraPreviewLayer;
 @property (strong, nonatomic)AVCaptureMovieFileOutput *movieFileOutput;
 @property (strong, nonatomic) NSString *brightnessValue;
+@property (weak, nonatomic) IBOutlet UILabel *recieveMessage;
 
 @end
 
@@ -125,6 +126,11 @@
     
     NSLog(@"%@", self.brightnessValue);
     
+}
+
+-(void)displayRecievedMessage:(NSString *)newMessage
+{
+//    self.recieveMessage = (translated Message)
 }
 
 @end
